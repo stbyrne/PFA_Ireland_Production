@@ -72,8 +72,8 @@
     <icon src="icon.png" />
     <icon src="icons/ios/icon.png"            gap:platform="ios"        width="57" height="57" />
     <icon src="icons/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
-    <icon src="icons/ios/icon_at_2x.png"         gap:platform="ios"        width="114" height="114" />
-    <icon src="icons/ios/icon-72_at_2x.png"         gap:platform="ios"        width="144" height="144" />
+    <icon src="icons/ios/icon@2x.png"         gap:platform="ios"        width="114" height="114" />
+    <icon src="icons/ios/icon-72@2x.png"         gap:platform="ios"        width="144" height="144" />
     <icon src="icons/winphone/icon.png" gap:platform="winphone" />
     <icon src="icons/winphone/titleicon.png" gap:platform="winphone" gap:role="background" />
     
