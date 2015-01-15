@@ -282,12 +282,9 @@ function initiateList(){
                     
         }));
         
-        
-                        
+                      
         $.each(news, function(i){
-            
-            console.log(this['node_title']);
-            
+                        
             var articleNum = i + 1,
                 $body = $('body'),
                 $articleid = this['nid'],
@@ -299,21 +296,16 @@ function initiateList(){
                 $thumb = $(this['thumbnail']).attr('src'),
                 $image = $(this['field_image']).attr('src'),
                 $text = this['body'],
-                $imageGrab = $($text).find('img').attr('src'),
                 $intro = $.trim($text.replace('<p>', '').substr(0,95)),
                 $newslist = $('#newslist');
             
-            console.log(typeof($text));
-            
-            if(typeof($imageGrab)=='string'){
-                if($imageGrab.slice(0, 18)!='http://www.pfai.ie'){
-                        $imageGrab='http://www.pfai.ie'+$imageGrab;
-                        $src = $($text).find('img').attr('src');
-                        $height = $($text).find('img').attr('height');
-                        $text = $text.replace($src, $imageGrab);
-                        $text = $text.replace($height, 'auto');
+            $.each($($text).find('img'), function(){
+                if($(this).attr('src').slice(0,18)!='http://www.pfai.ie'){
+                       $text = $text.replace($(this).attr('src'), 'http://www.pfai.ie' + $(this).attr('src'));
+                 
                 }
-            }
+                
+            });
             
             
         $newslist.append(
