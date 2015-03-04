@@ -181,7 +181,7 @@ function initiateList(){
                 
         $.ajax({
         
-            url: 'http://pfai.fireflyweb.ie/mobile/transferliststream',
+            url: 'http://pfai.ie/mobile/transferliststream',
             dataType: 'json',
             cache: false,
             success: function(data) {
@@ -244,7 +244,7 @@ function initiateList(){
             
                 /*url: 'getNews.php',*/
                 /*url: 'http://www.stuartbyrne.com/pfai/getNews.php',*/
-                url: 'http://pfai.fireflyweb.ie/mobile/pfainews',
+                url: 'http://pfai.ie/mobile/pfainews',
                 dataType: 'json',
                 cache: false,
                 success: function(data) {
