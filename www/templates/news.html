@@ -14,6 +14,8 @@
     </ion-nav-bar>
 
     <ion-content>
+        <ion-refresher pulling-text="Updating news..." on-refresh="doRefresh()">
+        </ion-refresher>
         <div class="item item-input news-search">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="search" placeholder="Search News" ng-model="searchNews">

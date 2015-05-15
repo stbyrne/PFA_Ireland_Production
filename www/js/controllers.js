@@ -249,6 +249,9 @@ angular.module('starter.controllers', [])
            
                 
                 });
+        $scope.doRefresh = function(){
+            window.location.reload(true);   
+        }
     
 }])
 
