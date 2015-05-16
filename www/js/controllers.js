@@ -217,7 +217,6 @@ angular.module('starter.controllers', [])
                 $articleIntro = $($getBody).html().substr(0,80) + '...' + ' read more',
                 $articleThumb = $(value["thumbnail"]).attr('src');
             
-            console.log($articleIntro);
             
             $.each($($articleBody).find('img'), function(){
                 if($(this).attr('src').slice(0,18)!='http://www.pfai.ie'){
@@ -240,6 +239,7 @@ angular.module('starter.controllers', [])
         $timeout(function(){
           $ionicSlideBoxDelegate.update();
         }, 500)
+        
         }, function(){
             
             
@@ -250,7 +250,7 @@ angular.module('starter.controllers', [])
                 
                 });
         $scope.doRefresh = function(){
-            window.location.reload(true);   
+            $state.go($state.current, {}, {reload: true});   
         }
     
 }])
