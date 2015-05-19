@@ -4,13 +4,13 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ie.pfai.appProduction"
-        version   = "2.1"
+        version   = "2.2"
         versionCode = "1" >
 
     <name>PFA Ireland Mobile</name>
 
     <description>
-        PFA Ireland application
+        PFA Ireland mobile application
     </description>
 
     <author href="http://pfai.ie" email="strtbyrne@gmail.com">
