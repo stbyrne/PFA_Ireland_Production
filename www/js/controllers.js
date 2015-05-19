@@ -29,7 +29,6 @@ angular.module('starter.controllers', [])
         
         url: "http://pfai.ie/mobile/pfainews",
         dataType: 'json',
-        cache: true,
         timeout: 5000,
         success: function(data) {
             return data;
@@ -180,7 +179,7 @@ angular.module('starter.controllers', [])
     
 }])
 
-.controller('NewsCtrl', ['$scope', 'newsFactory', '$ionicLoading', '$ionicSlideBoxDelegate', '$timeout', function($scope, newsFactory, $ionicLoading , $ionicSlideBoxDelegate, $timeout) {
+.controller('NewsCtrl', ['$scope', 'newsFactory', '$ionicLoading', '$ionicSlideBoxDelegate', '$timeout', '$state',  function($scope, newsFactory, $ionicLoading , $ionicSlideBoxDelegate, $timeout, $state) {
    
     $scope.news = [];
     $scope.article = [];
@@ -249,6 +248,7 @@ angular.module('starter.controllers', [])
            
                 
                 });
+    
         $scope.doRefresh = function(){
             $state.go($state.current, {}, {reload: true});   
         }

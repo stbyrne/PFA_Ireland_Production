@@ -224,6 +224,10 @@ i.icon.ion-loading-c {
     width: 100%;
     height: auto;
 }
+.article-detail{
+    background-color: rgba(255,255,255,.85); 
+    padding-bottom: 20px;
+}
 
 .card{
     margin: 0 0 20px; 
@@ -237,7 +241,7 @@ i.icon.ion-loading-c {
   color: rgb(255, 170, 0);
   margin: 0;
   padding: 10px 0;
-  background-color: rgb(235,235,235);
+  /*background-color: rgb(235,235,235);*/
     
 }
 .article span{
