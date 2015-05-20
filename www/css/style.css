@@ -303,6 +303,7 @@ img.section-main{
 }
 .fagan-inv{
        background-image: url('../images/content/fagan-inv.png');
+       background-size: cover;
 }
 .brennan{
        background-image: url('../images/content/brennan.png');
