@@ -197,16 +197,18 @@ angular.module('starter.controllers', [])
     showBackdrop: true
     });
     
+    
+    
     newsFactory.then(function(data){
-        
+
         console.log(data);
-        
+
         $scope.news = data;
         $scope.articles = [];
         $scope.articleList = [];
-        
+
         angular.forEach($scope.news, function(value, key, i){
-            
+
             var $getBody = value["body"],
                 $articleBody = $getBody,
                 $timestamp = new Date(value["date"]*1000),
@@ -215,42 +217,43 @@ angular.module('starter.controllers', [])
                 $articleTitle = value["node_title"],
                 $articleIntro = $($getBody).html().substr(0,80) + '...' + ' read more',
                 $articleThumb = $(value["thumbnail"]).attr('src');
-            
-            
+
+
             $.each($($articleBody).find('img'), function(){
                 if($(this).attr('src').slice(0,18)!='http://www.pfai.ie'){
                        $articleBody = $articleBody.replace($(this).attr('src'), 'http://www.pfai.ie' + $(this).attr('src'));
-                 
+
                 }
-                
+
             });
-            
+
             this.push({thumb:$articleThumb, title:$articleTitle, intro:$articleIntro, image:$articleImage, date:$articleDate, text:$articleBody});
-            
+
         }, $scope.articles)
-        
+
         var newsObj = $scope.articles;
-        
+
         localStorage.setItem('newsStorage', JSON.stringify(newsObj));
-        
+
         $ionicLoading.hide();
-        
+
         $timeout(function(){
           $ionicSlideBoxDelegate.update();
         }, 500)
-        
+
         }, function(){
-            
-            
+
+
                     alert('Oops cant get the latest news at the moment. You can still view saved news stories.');
                     $scope.articles = JSON.parse(localStorage.getItem('newsStorage'));
                     $ionicLoading.hide();
-           
-                
+
+
                 });
     
         $scope.doRefresh = function(){
-            $state.go($state.current, {}, {reload: true});   
+            $state.go($state.current, {}, {reload: true});
+            
         }
     
 }])
